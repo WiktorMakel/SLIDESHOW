@@ -8,7 +8,6 @@
     body {
       margin: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -16,34 +15,38 @@
       overflow: hidden;
     }
 
-    h1 {
-      color: white;
-      top: 20px;
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      margin: 10px 0;
-      z-index: 10;
-    }
-
     .slideshow-container {
-      position: relative; 
-      flex: 1;
+      position: relative; /* potrzebne, żeby napis można było absolutnie ułożyć w środku */
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
     }
 
-    img {
-      width: 95%;
-      height: 75%;
+    .slideshow-container img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px; /* odstęp od góry */
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      margin: 0;
+      z-index: 10; /* zawsze nad zdjęciem */
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* kontrast, żeby było widać */
     }
   </style>
 </head>
 <body>
-  <h1>Wiktor Slideshow</h1>
   <div class="slideshow-container">
+    <h1>Wiktor Slideshow</h1>
     <img id="slideshow" src="" alt="Slideshow" />
   </div>
 

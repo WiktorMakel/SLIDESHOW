@@ -5,43 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Slideshow - Moje zdjęcia</title>
   <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #000;
-      overflow: hidden;
-    }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ustawiamy od góry */
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
 
-    .slideshow-container {
-      position: relative; /* potrzebne, żeby napis można było absolutnie ułożyć w środku */
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+h1 {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  margin: 20px 0;
+}
 
-    .slideshow-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.slideshow-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    h1 {
-      position: absolute;
-      top: 20px; /* odstęp od góry */
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      margin: 0;
-      z-index: 10; /* zawsze nad zdjęciem */
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* kontrast, żeby było widać */
-    }
+img {
+  max-width: 90%;
+  max-height: 80vh; /* ograniczamy wysokość, żeby nagłówek był widoczny */
+  object-fit: contain;
+}
+
   </style>
 </head>
 <body>

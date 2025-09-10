@@ -53,16 +53,15 @@
     function loadImage() {
       img.src = images[index];
       
-      // reset animacji
       img.style.animation = "none";
-      img.offsetHeight; // trigger reflow
+      img.offsetHeight;
       img.style.animation = null;
 
-      index = (index + 1) % images.length; // przechodzenie w pętli
+      index = (index + 1) % images.length;
     }
 
     loadImage();
-    setInterval(loadImage, 5000); // zmiana co 5 sek
+    setInterval(loadImage, 5000);
   </script>
 </body>
 </html>
